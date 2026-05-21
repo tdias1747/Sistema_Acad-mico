@@ -1,5 +1,7 @@
 package br.com.sistemaac_modelo;
 
+//VALIDAÇÃO DOS MÉTODOS (AÇÕES QUE A CLASSE TERÁ)
+
 public class Aluno {
     private String rgm;
     private String nome;
@@ -27,6 +29,8 @@ public class Aluno {
         this.celular = celular;
     }
 
+    // USO DE GET E SETTERS (PARA CAUSAR RETORNO E VALIDAÇÃO)
+    
     public String getRgm() { return rgm; }
     public void setRgm(String rgm) { this.rgm = rgm; }
     
