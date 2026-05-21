@@ -1,4 +1,5 @@
 package br.com.sistemaac_modelo;
+//VALIDAÇÃO DOS MÉTODOS (AÇÕES QUE A CLASSE TERÁ)
 
 public class Notas_e_Faltas {
     private int idNota;
