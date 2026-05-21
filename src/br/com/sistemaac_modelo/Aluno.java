@@ -16,6 +16,7 @@ public class Aluno {
   
     public Aluno() {}
 
+    // Construtor completo para criar um aluno com todos os dados possíveis
     
     public Aluno(String rgm, String nome, String dataDeNascimento, String cpf, String email, String endereco, String municipio, String uf, String celular) {
         this.rgm = rgm;
