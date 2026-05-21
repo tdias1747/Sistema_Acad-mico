@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
+// LINHA QUE MOSTRA A CONEXÃO AO USUARIO MYSQL PARA TER ACESSO AS TABELAS
+
 public class Conexao {
     
     private static final String URL = "jdbc:mysql://localhost:3206/sistemaacademico";
