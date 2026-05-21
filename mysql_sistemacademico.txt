@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sistemaacademico;
+USE sistemaacademico;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS Notas_e_Faltas;
+DROP TABLE IF EXISTS Curso;
+DROP TABLE IF EXISTS Aluno;
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+CREATE TABLE Aluno (
+    RGM VARCHAR(20) PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Data_de_Nascimento VARCHAR(10) NOT NULL, 
+    CPF VARCHAR(14) UNIQUE NOT NULL,    
+    Email VARCHAR(100),
+    Endereco VARCHAR(150),
+    Municipio VARCHAR(50),
+    UF VARCHAR(2),
+    Celular VARCHAR(15)                  
+);
+
+
+CREATE TABLE Curso (
+    RGM VARCHAR(20) PRIMARY KEY,         
+    Curso VARCHAR(100) NOT NULL,
+    Campus VARCHAR(50) NOT NULL,
+    Periodo VARCHAR(20) NOT NULL,
+    FOREIGN KEY (RGM) REFERENCES Aluno(RGM) ON DELETE CASCADE
+);
+
+
+CREATE TABLE Notas_e_Faltas (
+    id_nota INT AUTO_INCREMENT PRIMARY KEY, 
+    RGM VARCHAR(20) NOT NULL,
+    Disciplina VARCHAR(100) NOT NULL,
+    Semestre VARCHAR(10) NOT NULL,
+    Nota DECIMAL(4,2),
+    Faltas INT,
+    FOREIGN KEY (RGM) REFERENCES Aluno(RGM) ON DELETE CASCADE
+);
