@@ -20,22 +20,22 @@ public class TelaPrincipal extends JFrame {
 
     private JTabbedPane abas;
     
-    
+    //  Dados Pessoais
     private JTextField txtRgm, txtNome, txtEmail, txtEndereco, txtMunicipio;
     private JFormattedTextField txtDataNasc, txtCpf, txtCelular;
     private JComboBox<String> cbUf;
     
-    
+    //CURSO
     private JComboBox<String> cbCurso, cbCampus;
     private JRadioButton rbMatutino, rbVespertino, rbNoturno;
     private ButtonGroup bgPeriodo;
 
-   
+   // PÁGINA NOTA E FALTAS
     private JTextField txtNota, txtFaltas;
     private JComboBox<String> cbDisciplina, cbSemestre;
     private JTextField txtRgmNotas, txtNomeNotasExibe, txtCursoNotasExibe;
 
- 
+ // BOLETIM
     private JTextArea txtBoletim;
 
     
@@ -43,6 +43,9 @@ public class TelaPrincipal extends JFrame {
     private CursoDAO cursoDAO = new CursoDAO();
     private Notas_e_FaltasDAO notasDAO = new Notas_e_FaltasDAO();
 
+    
+    // CONFIGURAÇÃO DO MENU SUPERIOR
+    
     public TelaPrincipal() {
         setTitle("Sistema Acadêmico");
         setSize(650, 420);
@@ -132,6 +135,9 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
+        
+        //CONFIGURAÇÃO DAS LETRAS E CAMPOS (TAMANHO, TIPO DE TEXTO...)
+        
         JLabel lblNome = new JLabel("Nome"); lblNome.setBounds(200, 20, 40, 20); painel.add(lblNome);
         txtNome = new JTextField(); txtNome.setBounds(245, 20, 340, 22); painel.add(txtNome);
 
