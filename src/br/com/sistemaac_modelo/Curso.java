@@ -14,6 +14,8 @@ public class Curso {
         this.campus = campus;
         this.periodo = periodo;
     }
+    
+    // USO DE GET E SETTERS (PARA CAUSAR RETORNO E VALIDAÇÃO)
     public String getRgm() { return rgm; }
     public void setRgm(String rgm) { this.rgm = rgm; }
     
