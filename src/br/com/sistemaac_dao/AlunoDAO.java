@@ -8,8 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+// DAO RESPONSÁVEL PELAS OPERAÇÕES CRUD E FAZER A PONTE ENTRE A INTERFACE JAVA E O MYSQL
+
 public class AlunoDAO {
 
+    // SALVA OS DADOS DO DEVIDO ALUNO NO BANCO DE DADOS
+    
     public void salvar(Aluno aluno) throws SQLException {
         String sql = "INSERT INTO Aluno (RGM, Nome, Data_de_Nascimento, CPF, Email, Endereco, Municipio, UF, Celular) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -25,7 +29,8 @@ public class AlunoDAO {
             stmt.executeUpdate();
         }
     }
-
+// CONSULTA DADOS DO ALUNO NO BANCO DE DADOS
+    
     public Aluno consultar(String rgm) throws SQLException {
         String sql = "SELECT * FROM Aluno WHERE RGM = ?";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -49,6 +54,8 @@ public class AlunoDAO {
         return null;
     }
 
+    //ALTERA DADOS DOS ALUNOS NO BANCO DADOS
+    
     public void alterar(Aluno aluno) throws SQLException {
         String sql = "UPDATE Aluno SET Nome = ?, Data_de_Nascimento = ?, CPF = ?, Email = ?, Endereco = ?, Municipio = ?, UF = ?, Celular = ? WHERE RGM = ?";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -64,7 +71,8 @@ public class AlunoDAO {
             stmt.executeUpdate();
         }
     }
-
+// EXCLUSÃO DE DADOS DO ALUNO NO BANCO DE DADOS
+    
     public void excluir(String rgm) throws SQLException {
         String sql = "DELETE FROM Aluno WHERE RGM = ?";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
