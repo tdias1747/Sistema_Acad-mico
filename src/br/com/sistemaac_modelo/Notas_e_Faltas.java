@@ -18,7 +18,7 @@ public class Notas_e_Faltas {
         this.nota = nota;
         this.faltas = faltas;
     }
-
+// USO DE GET E SETTERS (PARA CAUSAR RETORNO E VALIDAÇÃO)
     public int getIdNota() { return idNota; }
     
     public void setIdNota(int idNota) { this.idNota = idNota; }
