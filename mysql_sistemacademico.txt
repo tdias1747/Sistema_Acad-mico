@@ -1,12 +1,16 @@
 CREATE DATABASE IF NOT EXISTS sistemaacademico;
 USE sistemaacademico;
 
+
+// limpeza das tabelas
+
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS Notas_e_Faltas;
 DROP TABLE IF EXISTS Curso;
 DROP TABLE IF EXISTS Aluno;
 SET FOREIGN_KEY_CHECKS = 1;
 
+//criação das tabelas com seus respectivos campos
 
 CREATE TABLE Aluno (
     RGM VARCHAR(20) PRIMARY KEY,
